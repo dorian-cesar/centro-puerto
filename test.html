@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Página Web</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-image: url('https://www.centropuerto.cl/assets/centropuerto/Home/Home-Banner-01.webp'); /* Ruta de tu imagen de fondo */
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+    .sidebar {
+      width: 200px;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.7); /* Transparencia del 70% */
+      position: fixed;
+      top: 0;
+      left: 0;
+      padding-top: 20px;
+    }
+    .content {
+      margin-left: 200px; /* Para dejar espacio al sidebar */
+      padding: 20px;
+    }
+    .card {
+      background-color: rgba(255, 255, 255, 0.7); /* Transparencia del 70% */
+      margin-bottom: 20px;
+    }
+    @media (max-width: 768px) {
+  body {
+    background-size: contain;
+  }
+}
+  </style>
+</head>
+<body>
+
+<div class="sidebar">
+  <ul class="nav flex-column">
+    <li class="nav-item">
+      <a class="nav-link active" href="#">Rutas</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Reservas</a>
+    </li>
+  </ul>
+</div>
+
+<div class="content">
+  <div class="container">
+    <button class="btn btn-dark d-md-none" id="sidebar-toggle"><i class="fas fa-bars"></i></button>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Origen</h5>
+            <!-- Aquí puedes agregar contenido para el origen -->
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Destino</h5>
+            <!-- Aquí puedes agregar contenido para el destino -->
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Horarios</h5>
+            <!-- Aquí puedes agregar contenido para los horarios -->
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Botón</h5>
+            <a href="#" class="btn btn-primary">Ir a otra URL</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+    $(document).ready(function(){
+      $("#sidebar-toggle").click(function(){
+        $("#sidebar").toggleClass("show");
+      });
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>CentroPuerto</title>
+
+    <style>
+        body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background-color :#fff
+    }
+        .menu-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+            z-index: 9999;
+        }
+        .menu-toggle .bar {
+        width: 25px;
+        height: 3px;
+        background-color: #751f1f;
+        margin: 5px 0;
+        transition: 0.4s;
+    }
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: -200px;
+        width: 200px;
+        height: 100vh;
+        background-color: rgba(44, 62, 80, 0.7);;
+        transition: all 0.3s ease;
+    }
+    .sidebar.active {
+        left: 0;
+    }
+    .sidebar-item {
+        margin-top: 10px;
+        padding: 10px 20px;
+        color: #fff;
+        text-decoration: none;
+        display: block;
+        font-size: 25px;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+    }
+    .sidebar-item:hover {
+        background: #3498db;
+        text-decoration: none;
+    }
+    .menu-toggle.active .bar:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    .menu-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .menu-toggle.active .bar:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+    .content .banner {
+       
+        height: 200px;
+        background-color: white
+    }
+    .reservas {
+        width: 80%;
+        margin: auto;
+       
+      
+
+    }
+    .destinos {
+        width: 100%;
+        color: white;
+        text-align: center;
+       
+       
+       
+        background-color: #3498db;
+        border-top-left-radius: 30px;
+        border-top-right-radius: 30px;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+        
+      
+    }
+    .horarios {
+        width: 100%;
+        color: rgb(114, 114, 114);
+        background: #fff;
+        text-align: center;
+       
+        
+        
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+        border: 2px solid rgb(0, 81, 255);
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+          
+    }
+    .rutas {
+        margin-top: 20px;
+    }
+    button a {
+        margin-bottom: 5px;
+    }
+
+    </style>
+
+</head>
+<body>
+    <div class="sidebar" id="sidebar">
+        <a href="#" class="sidebar-item">Rutas</a>
+        <a href="#" class="sidebar-item">Reservas</a>
+        <a href="#" class="sidebar-item">Nostros</a>
+    </div>
+    
+    <div class="menu-toggle" id="menu-toggle">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+    <div class="content">
+        <div class="banner">
+            <img src="https://www.centropuerto.cl/assets/centropuerto/Home/Home-Banner-01.webp" alt="" height="200px">
+        </div>
+        <div class="reservas">
+
+            <div class="rutas">
+                <div class="destinos">
+                    <h3>Desde Los Héroes</h3>
+                    <h3>Hasta Aeropuerto</h3>
+                    <h3>ó</h3>
+                    <h3>Desde Aeropuerto</h3>
+                    <h3>Hsta Los Héroes</h3>
+            
+            
+                </div>
+                <div class="horarios">
+                    <h4>Horarios: Lun-Dom</h4>
+                    <h4>06:00 -23:30</h4>
+                    <h4>Horario nocturno</h4>
+                    <h4>00:00- 01:00-02:00</h4>
+                    <h4>03:0- 04:00 y 05:00</h4>
+                    <button class="btn btn-warning"><a href="">Comprar</a></button>
+
+                </div>
+
+            </div>
+            <div class="rutas">
+                <div class="destinos">
+                    <h3>Desde Los Héroes</h3>
+                    <h3>Hasta Aeropuerto</h3>
+                    <h3>ó</h3>
+                    <h3>Desde Aeropuerto</h3>
+                    <h3>Hsta Los Héroes</h3>
+            
+            
+                </div>
+                <div class="horarios">
+                    <h4>Horarios: Lun-Dom</h4>
+                    <h4>06:00 -23:30</h4>
+                    <h4>Horario nocturno</h4>
+                    <h4>00:00- 01:00-02:00</h4>
+                    <h4>03:0- 04:00 y 05:00</h4>
+                    <button class="btn btn-warning"><a href="">Comprar</a></button>
+
+                </div>
+
+            </div>
+            <div class="rutas">
+                <div class="destinos">
+                    <h3>Desde Los Héroes</h3>
+                    <h3>Hasta Aeropuerto</h3>
+                    <h3>ó</h3>
+                    <h3>Desde Aeropuerto</h3>
+                    <h3>Hsta Los Héroes</h3>
+            
+            
+                </div>
+                <div class="horarios">
+                    <h4>Horarios: Lun-Dom</h4>
+                    <h4>06:00 -23:30</h4>
+                    <h4>Horario nocturno</h4>
+                    <h4>00:00- 01:00-02:00</h4>
+                    <h4>03:0- 04:00 y 05:00</h4>
+                    <button class="btn btn-warning"><a href="">Comprar</a></button>
+
+                </div>
+
+            </div>
+            <div class="rutas">
+                <div class="destinos">
+                    <h3>Desde Los Héroes</h3>
+                    <h3>Hasta Aeropuerto</h3>
+                    <h3>ó</h3>
+                    <h3>Desde Aeropuerto</h3>
+                    <h3>Hsta Los Héroes</h3>
+            
+            
+                </div>
+                <div class="horarios">
+                    <h4>Horarios: Lun-Dom</h4>
+                    <h4>06:00 -23:30</h4>
+                    <h4>Horario nocturno</h4>
+                    <h4>00:00- 01:00-02:00</h4>
+                    <h4>03:0- 04:00 y 05:00</h4>
+                    <button class="btn btn-warning"><a href="">Comprar</a></button>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+  
+   
+
+
+
+    <script>
+    const sidebarToggle = document.getElementById('menu-toggle');
+    const sidebar = document.getElementById('sidebar');
+
+    sidebarToggle.addEventListener('click', () => {
+        sidebar.classList.toggle('active');
+        sidebarToggle.classList.toggle('active');
+    });
+    </script>
+</body>
+</html>
