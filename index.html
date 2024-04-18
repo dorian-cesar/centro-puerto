@@ -11,7 +11,12 @@
         margin: 0;
         padding: 0;
         font-family: Arial, sans-serif;
-        background-color :#fff
+        background-color :#fff;
+        background-image: url('https://www.centropuerto.cl/assets/centropuerto/Home/Home-Banner-01.webp'); /* Ruta de tu imagen de fondo */
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+        
     }
         .menu-toggle {
             position: fixed;
@@ -62,12 +67,16 @@
     .menu-toggle.active .bar:nth-child(3) {
         transform: rotate(45deg) translate(-5px, -6px);
     }
+    .content {
+        max-width: 370px;
+        margin: auto;
+    }
     .content .banner {
        
         height: 200px;
         width: 100%;
         background-color: #3498db;
-        text-align: center;
+        margin: auto;
         
     }
 
