@@ -1,0 +1,39 @@
+body {
+    font-size: 18px;
+    font-family: sans-serif;
+    color: rgb(78, 78, 78);
+}
+#form-content {
+    
+   
+    max-width: 370px;
+    margin: auto;
+    border-radius: 30px;
+
+   
+    padding-bottom: 20px;
+    border: 2px solid rgb(0, 81, 255);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 10px;
+    
+    
+  
+    
+}
+
+
+  .custom-select,
+  .custom-select:focus {
+    height: 50px; /* Ajusta la altura según tus necesidades */
+    padding: 10px;
+    width: 90%;
+  }
+  .custom-input {
+    height: 50px; /* Ajusta la altura según tus necesidades */
+    padding: 10px;
+  }
+
+
+

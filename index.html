@@ -8,212 +8,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/stylesheet.css">
+
     <title>CentroPuerto</title>
 
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            border-color: #ecf7ff;
 
-        }
-
-        .menu-toggle {
-            position: fixed;
-            top: 10px;
-            left: 380px;
-            cursor: pointer;
-            z-index: 9999;
-        }
-
-        .menu-toggle .bar {
-            width: 25px;
-            height: 3px;
-            background-color: #ffffff;
-            margin: 5px 0;
-            transition: 0.4s;
-        }
-
-        .sidebar {
-            position: fixed;
-            top: 0;
-            left: -200px;
-            width: 200px;
-            height: 100vh;
-            background-color: rgba(44, 62, 80, 0.7);
-            ;
-            transition: all 0.3s ease;
-            z-index: 500;
-        }
-
-        .sidebar.active {
-            left: 0;
-        }
-
-        .sidebar-item {
-            margin-top: 10px;
-            padding: 10px 20px;
-            color: #fff;
-            text-decoration: none;
-            display: block;
-            font-size: 25px;
-            border-top-left-radius: 20px;
-            border-bottom-left-radius: 20px;
-        }
-
-        .sidebar-item:hover {
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-            text-decoration: none;
-        }
-
-        .menu-toggle.active .bar:nth-child(1) {
-            transform: rotate(-45deg) translate(-5px, 6px);
-        }
-
-        .menu-toggle.active .bar:nth-child(2) {
-            opacity: 0;
-        }
-
-        .menu-toggle.active .bar:nth-child(3) {
-            transform: rotate(45deg) translate(-5px, -6px);
-        }
-
-        .content {
-            max-width: 370px;
-            margin: auto;
-        }
-
-        .content .banner {
-
-            height: 200px;
-            width: 100%;
-            background-color: #3498db;
-            margin: auto;
-            position: fixed;
-            /* Fija el banner en la parte superior de la página */
-            top: 0;
-            /* Lo posiciona al principio de la página */
-            left: 0;
-
-
-        }
-
-        .content .banner img {
-
-            margin: auto;
-        }
-
-        .reservas {
-            width: 80%;
-            margin: auto;
-            margin-top: 205px;
-
-        }
-
-        #rutas {
-            width: 100%;
-            margin: auto;
-            margin-top: 205px;
-            text-align: center;
-
-
-        }
-
-        .rutas-reservas {
-            margin-top: 20px;
-        }
-
-        #about {
-            width: 100%;
-            margin: auto;
-            margin-top: 205px;
-           
-
-        }
-
-        .destinos {
-            width: 100%;
-            color: white;
-            text-align: center;
-            padding: 0;
-
-
-
-            background-color: #3498db;
-            border-top-left-radius: 30px;
-            border-top-right-radius: 30px;
-            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-
-
-        }
-
-        .horarios {
-            width: 100%;
-            color: rgb(114, 114, 114);
-            background: #fff;
-            text-align: center;
-
-
-
-            border-bottom-left-radius: 30px;
-            border-bottom-right-radius: 30px;
-            border: 2px solid rgb(0, 81, 255);
-            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-
-        }
-
-
-
-        .boton {
-            background: #ffc72c;
-            color: rgb(248, 247, 247);
-
-            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-            border-radius: 50px;
-            margin-bottom: 4px;
-            padding: 5px, 20px, 5px, 20px;
-        }
-
-        .boton:hover {
-            background-color: rgb(160, 229, 160);
-            color: blue;
-        }
-
-        a {
-            text-decoration: none;
-        }
-
-        button {
-            text-decoration-style: none;
-            border: none;
-        }
-
-        spam {
-            color: #ffc72c;
-            font-size: 20px;
-            font-weight: 100;
-        }
-
-        p {
-            font-size: 20px;
-        }
-
-
-        .contenedor-rutas {
-           
-        width: 98%;
-       
-        border-radius: 10px;
-        margin-bottom: 20px;
-        border: 2px solid rgb(0, 81, 255);
-        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-        padding-top: 20px;
-        padding-bottom: 20px;
-
-        }
-    </style>
 
 </head>
 
@@ -231,7 +30,7 @@
     </div>
     <div class="content">
         <div class="banner">
-            <img src="Home-Banner-01.webp" alt="No imagen" height="200px">
+            <img src="./asset/Home-Banner-01.webp" alt="No imagen" height="200px">
 
         </div>
         <div class="reservas" id="reservas">
@@ -277,30 +76,30 @@
             <h1>Rutas</h1>
             <div class="contenedor-rutas">
                 <h4>Ruta Los Heroes -Aeropuero</h4>
-                <img src="./heroes.png">
+                <img src="./asset/heroes.png">
                 <hr>
-                <img src="./los-heroes.png" class="route-image">
+                <img src="./asset/los-heroes.png" class="route-image">
+                <a href="./formulario.html"><button class="btn btn-primary" > Comprar </button></a>
+            </div>
+            <div class="contenedor-rutas">
+                <h4>Ruta Los Heroes -Aeropuero</h4>
+                <img src="./asset/heroes.png">
+                <hr>
+                <img src="./asset/los-heroes.png" class="route-image">
                 <button class="btn btn-primary" > Comprar </button>
             </div>
             <div class="contenedor-rutas">
                 <h4>Ruta Los Heroes -Aeropuero</h4>
-                <img src="./heroes.png">
+                <img src="./asset/heroes.png">
                 <hr>
-                <img src="./los-heroes.png" class="route-image">
+                <img src="./asset/los-heroes.png" class="route-image">
                 <button class="btn btn-primary" > Comprar </button>
             </div>
             <div class="contenedor-rutas">
                 <h4>Ruta Los Heroes -Aeropuero</h4>
-                <img src="./heroes.png">
+                <img src="./asset/heroes.png">
                 <hr>
-                <img src="./los-heroes.png" class="route-image">
-                <button class="btn btn-primary" > Comprar </button>
-            </div>
-            <div class="contenedor-rutas">
-                <h4>Ruta Los Heroes -Aeropuero</h4>
-                <img src="./heroes.png">
-                <hr>
-                <img src="./los-heroes.png" class="route-image">
+                <img src="./asset/los-heroes.png" class="route-image">
                 <button class="btn btn-primary" > Comprar </button>
             </div>
         </div>
