@@ -1,194 +1,229 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, orientation=portrait">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, orientation=portrait">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <title>CentroPuerto</title>
 
     <style>
         body {
-        margin: 0;
-        padding: 0;
-        font-family: Arial, sans-serif;
-        border-color: #ecf7ff;
-        
-    }
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            border-color: #ecf7ff;
+
+        }
+
         .menu-toggle {
             position: fixed;
             top: 10px;
-            left: 320px;
+            left: 380px;
             cursor: pointer;
             z-index: 9999;
         }
+
         .menu-toggle .bar {
-        width: 25px;
-        height: 3px;
-        background-color: #ffffff;
-        margin: 5px 0;
-        transition: 0.4s;
-    }
-    .sidebar {
-        position: fixed;
-        top: 0;
-        left: -200px;
-        width: 200px;
-        height: 100vh;
-        background-color: rgba(44, 62, 80, 0.7);;
-        transition: all 0.3s ease;
-        z-index: 500;
-    }
-    .sidebar.active {
-        left: 0;
-    }
-    .sidebar-item {
-        margin-top: 10px;
-        padding: 10px 20px;
-        color: #fff;
-        text-decoration: none;
-        display: block;
-        font-size: 25px;
-        border-top-left-radius: 20px;
-        border-bottom-left-radius: 20px;
-    }
-    .sidebar-item:hover {
-        background: rgba(255, 255, 255, 0.2);
-        color: white;
-        text-decoration: none;
-    }
-    .menu-toggle.active .bar:nth-child(1) {
-        transform: rotate(-45deg) translate(-5px, 6px);
-    }
-    .menu-toggle.active .bar:nth-child(2) {
-        opacity: 0;
-    }
-    .menu-toggle.active .bar:nth-child(3) {
-        transform: rotate(45deg) translate(-5px, -6px);
-    }
-    .content {
-        max-width: 370px;
-        margin: auto;
-    }
-    .content .banner {
-       
-        height: 200px;
-        width: 100%;
-        background-color: #3498db;
-        margin: auto;
-        position: fixed; /* Fija el banner en la parte superior de la página */
-  top: 0; /* Lo posiciona al principio de la página */
-  left: 0;
- 
-        
-    }
+            width: 25px;
+            height: 3px;
+            background-color: #ffffff;
+            margin: 5px 0;
+            transition: 0.4s;
+        }
 
-   .content .banner img {
-      
-      margin: auto;
-    }
-    .reservas {
-        width: 80%;
-        margin: auto;
-        margin-top: 205px;
-     
-    }
-    #rutas {
-        width: 100%;
-        margin: auto;
-        margin-top: 205px;
-     
-    }
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: -200px;
+            width: 200px;
+            height: 100vh;
+            background-color: rgba(44, 62, 80, 0.7);
+            ;
+            transition: all 0.3s ease;
+            z-index: 500;
+        }
 
-    #about {
-        width: 80%;
-        margin: auto;
-        margin-top: 205px;
-     
-    }
-    .destinos {
-        width: 100%;
-        color: white;
-        text-align: center;
-        padding: 0;
+        .sidebar.active {
+            left: 0;
+        }
+
+        .sidebar-item {
+            margin-top: 10px;
+            padding: 10px 20px;
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            font-size: 25px;
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+        }
+
+        .sidebar-item:hover {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            text-decoration: none;
+        }
+
+        .menu-toggle.active .bar:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        .menu-toggle.active .bar:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active .bar:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+
+        .content {
+            max-width: 370px;
+            margin: auto;
+        }
+
+        .content .banner {
+
+            height: 200px;
+            width: 100%;
+            background-color: #3498db;
+            margin: auto;
+            position: fixed;
+            /* Fija el banner en la parte superior de la página */
+            top: 0;
+            /* Lo posiciona al principio de la página */
+            left: 0;
+
+
+        }
+
+        .content .banner img {
+
+            margin: auto;
+        }
+
+        .reservas {
+            width: 80%;
+            margin: auto;
+            margin-top: 205px;
+
+        }
+
+        #rutas {
+            width: 100%;
+            margin: auto;
+            margin-top: 205px;
+            text-align: center;
+
+
+        }
+
+        .rutas-reservas {
+            margin-top: 20px;
+        }
+
+        #about {
+            width: 100%;
+            margin: auto;
+            margin-top: 205px;
+           
+
+        }
+
+        .destinos {
+            width: 100%;
+            color: white;
+            text-align: center;
+            padding: 0;
+
+
+
+            background-color: #3498db;
+            border-top-left-radius: 30px;
+            border-top-right-radius: 30px;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+
+
+        }
+
+        .horarios {
+            width: 100%;
+            color: rgb(114, 114, 114);
+            background: #fff;
+            text-align: center;
+
+
+
+            border-bottom-left-radius: 30px;
+            border-bottom-right-radius: 30px;
+            border: 2px solid rgb(0, 81, 255);
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+
+        }
+
+
+
+        .boton {
+            background: #ffc72c;
+            color: rgb(248, 247, 247);
+
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+            border-radius: 50px;
+            margin-bottom: 4px;
+            padding: 5px, 20px, 5px, 20px;
+        }
+
+        .boton:hover {
+            background-color: rgb(160, 229, 160);
+            color: blue;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        button {
+            text-decoration-style: none;
+            border: none;
+        }
+
+        spam {
+            color: #ffc72c;
+            font-size: 20px;
+            font-weight: 100;
+        }
+
+        p {
+            font-size: 20px;
+        }
+
+
+        .contenedor-rutas {
+           
+        width: 98%;
        
-       
-       
-        background-color: #3498db;
-        border-top-left-radius: 30px;
-        border-top-right-radius: 30px;
-        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-        
-      
-    }
-    .horarios {
-        width: 100%;
-        color: rgb(114, 114, 114);
-        background: #fff;
-        text-align: center;
-       
-        
-        
-        border-bottom-left-radius: 30px;
-        border-bottom-right-radius: 30px;
+        border-radius: 10px;
+        margin-bottom: 20px;
         border: 2px solid rgb(0, 81, 255);
         box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-          
-    }
-    .rutas {
-        margin-top: 20px;
-    }
- 
-   
-    .boton {
-        background: #ffc72c;
-        color: rgb(248, 247, 247);
-        
-        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-        border-radius: 50px;
-        margin-bottom: 4px;
-        padding: 5px,20px,5px,20px;
-    }
-    .boton:hover {
-        background-color: rgb(160, 229, 160);
-        color: blue;
-    }
-    a {
-        text-decoration: none;
-    }
-    button {
-        text-decoration-style: none;
-        border: none;
-    }
-    spam {
-        color :#ffc72c;
-        font-size: 20px;
-        font-weight: 100;
-    }
-    p {
-        font-size: 20px;
-    }
-    #rutas {
-        text-align: center;
-        padding: 10px;
-    }
+        padding-top: 20px;
+        padding-bottom: 20px;
 
-    .contenedor {
-        margin: auto;
-        width: 100%;
-    }
-
+        }
     </style>
 
 </head>
+
 <body>
     <div class="sidebar" id="sidebar">
         <a href="#" class="sidebar-item" id="mostrarRutas">Rutas</a>
         <a href="#" class="sidebar-item" id="mostrarReservas">Reservas</a>
         <a href="#" class="sidebar-item" id="mostrarAbout">Nosotros</a>
     </div>
-    
+
     <div class="menu-toggle" id="menu-toggle">
         <div class="bar"></div>
         <div class="bar"></div>
@@ -197,150 +232,128 @@
     <div class="content">
         <div class="banner">
             <img src="Home-Banner-01.webp" alt="No imagen" height="200px">
-           
+
         </div>
         <div class="reservas" id="reservas">
             <img src="https://pb-pool.s3.amazonaws.com/RackMultipart20240228-1957-r13gag.png" alt="" id="logo">
 
-            <div class="rutas">
+            <div class="rutas-reservas">
                 <div class="destinos">
-                    <p>Desde <spam> Los Héroes <spam></p>
-                    <p>Hasta <spam> Aeropuerto <spam></p>
-                    <p>ó</p>
-                    <p>Desde <spam> Aeropuerto <spam></p>
-                    <p>Hasta <spam> Los Héroes <spam></p>
-            
-            
+                    <h4>Desde <spam> Los Héroes <spam>
+                    </h4>
+                    <h4>Hasta <spam> Aeropuerto <spam>
+                    </h4>
+                    <h4>ó</h4>
+                    <h4>Desde <spam> Aeropuerto <spam>
+                    </h4>
+                    <h4>Hasta <spam> Los Héroes <spam>
+                    </h4>
+
+
                 </div>
                 <div class="horarios">
-                    <p>Horarios: Lun-Dom</p>
-                    <p>06:00 -23:30</p>
-                    <p>Horario nocturno</p>
-                    <p>00:00- 01:00-02:00</p>
-                    <p>03:0- 04:00 y 05:00</p>
-                  <a href=""><button class="boton">Comprar</button></a>
-
-                </div>
-
-            </div>
-            <div class="rutas">
-                <div class="destinos">
-                    <p>Desde <spam> Los Héroes <spam></p>
-                    <p>Hasta <spam> Aeropuerto <spam></p>
-                    <p>ó</p>
-                    <p>Desde <spam> Aeropuerto <spam></p>
-                    <p>Hsta <spam> Los Héroes <spam></p>
-            
-            
-                </div>
-                <div class="horarios">
-                    <p>Horarios: Lun-Dom</p>
-                    <p>06:00 -23:30</p>
-                    <p>Horario nocturno</p>
-                    <p>00:00- 01:00-02:00</p>
-                    <p>03:0- 04:00 y 05:00</p>
-                    <a href=""><button class="boton"> Comprar </button></a>
-
-                </div>
-
-            </div>
-            <div class="rutas">
-                <div class="destinos">
-                    <p>Desde <spam> Los Héroes <spam></p>
-                    <p>Hasta <spam> Aeropuerto <spam></p>
-                    <p>ó</p>
-                    <p>Desde <spam> Aeropuerto <spam></p>
-                    <p>Hsta <spam> Los Héroes <spam></p>
-            
-            
-                </div>
-                <div class="horarios">
-                    <p>Horarios: Lun-Dom</p>
-                    <p>06:00 -23:30</p>
-                    <p>Horario nocturno</p>
-                    <p>00:00- 01:00-02:00</p>
-                    <p>03:0- 04:00 y 05:00</p>
+                    <h4>Horarios: Lun-Dom</h4>
+                    <h4>06:00 -23:30</h4>
+                    <h4>Horario nocturno</h4>
+                    <h4>00:00- 01:00-02:00</h4>
+                    <h4>03:0- 04:00 y 05:00</h4>
                     <a href=""><button class="boton">Comprar</button></a>
 
                 </div>
 
             </div>
-            <div class="rutas">
-                <div class="destinos">
-                    <p>Desde <spam> Los Héroes <spam></p>
-                    <p>Hasta <spam> Aeropuerto <spam></p>
-                    <p>ó</p>
-                    <p>Desde <spam> Aeropuerto <spam></p>
-                    <p>Hsta <spam> Los Héroes <spam></p>
-            
-            
-                </div>
-                <div class="horarios">
-                    <p>Horarios: Lun-Dom</p>
-                    <p>06:00 -23:30</p>
-                    <p>Horario nocturno</p>
-                    <p>00:00- 01:00-02:00</p>
-                    <p>03:0- 04:00 y 05:00</p>
-                    <a href=""><button class="boton">Comprar</button></a>
 
-                </div>
 
-            </div>
         </div>
-        <div id="about">
+
+        <div id="about" >
             <img src="https://pb-pool.s3.amazonaws.com/RackMultipart20240228-1957-r13gag.png" alt="" id="logo">
             <h1>Sobre nosotros</h1>
-            
+        
         </div>
-        <div id="rutas">
+
+        <div id="rutas"  style="display: none;">
             <img src="https://pb-pool.s3.amazonaws.com/RackMultipart20240228-1957-r13gag.png" alt="" id="logo">
             <h1>Rutas</h1>
-            <div class="contenedor">
-                <p>Ruta Los Heroes -Aeropuero</p>
-            <img src="./heroes.png">
-            <img src="./los-heroes.png" class="route-image">
+            <div class="contenedor-rutas">
+                <h4>Ruta Los Heroes -Aeropuero</h4>
+                <img src="./heroes.png">
+                <hr>
+                <img src="./los-heroes.png" class="route-image">
+                <button class="btn btn-primary" > Comprar </button>
+            </div>
+            <div class="contenedor-rutas">
+                <h4>Ruta Los Heroes -Aeropuero</h4>
+                <img src="./heroes.png">
+                <hr>
+                <img src="./los-heroes.png" class="route-image">
+                <button class="btn btn-primary" > Comprar </button>
+            </div>
+            <div class="contenedor-rutas">
+                <h4>Ruta Los Heroes -Aeropuero</h4>
+                <img src="./heroes.png">
+                <hr>
+                <img src="./los-heroes.png" class="route-image">
+                <button class="btn btn-primary" > Comprar </button>
+            </div>
+            <div class="contenedor-rutas">
+                <h4>Ruta Los Heroes -Aeropuero</h4>
+                <img src="./heroes.png">
+                <hr>
+                <img src="./los-heroes.png" class="route-image">
+                <button class="btn btn-primary" > Comprar </button>
             </div>
         </div>
     </div>
-  
-   
+
+
 
 
 
     <script>
-    const sidebarToggle = document.getElementById('menu-toggle');
-    const sidebar = document.getElementById('sidebar');
+        const sidebarToggle = document.getElementById('menu-toggle');
+        const sidebar = document.getElementById('sidebar');
 
-    sidebarToggle.addEventListener('click', () => {
-        sidebar.classList.toggle('active');
-        sidebarToggle.classList.toggle('active');
-    });
+        sidebarToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('active');
+            sidebarToggle.classList.toggle('active');
+        });
 
-    $(document).ready(function(){
+        $(document).ready(function () {
 
-    $("#mostrarReservas").click(function(){
-      $("#reservas").show(); 
-      $("#rutas").hide();
-      $("#about").hide();
+            $("#mostrarReservas").click(function () {
+                $("#reservas").show();
+                $("#rutas").hide();
+                $("#about").hide();
 
-    });
-    
-    $("#mostrarRutas").click(function(){
-    $("#reservas").hide(); 
-      $("#rutas").show();
-      $("#about").hide();
+                $('#sidebar').toggleClass('active');
+                $(this).toggleClass('active');
 
-    });
+            });
 
-    $("#mostrarAbout").click(function(){
-    $("#reservas").hide(); 
-      $("#rutas").hide();
-      $("#about").show();
+            $("#mostrarRutas").click(function () {
+                $("#reservas").hide();
+                $("#rutas").show();
+                $("#about").hide();
 
-    });
-   
-  });
+                $('#sidebar').toggleClass('active');
+                $(this).toggleClass('active');
+
+            });
+
+            $("#mostrarAbout").click(function () {
+                $("#reservas").hide();
+                $("#rutas").hide();
+                $("#about").show();
+
+                $('#sidebar').toggleClass('active');
+                $(this).toggleClass('active');
+
+            });
+
+        });
 
     </script>
 </body>
+
 </html>
