@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, orientation=portrait">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <title>CentroPuerto</title>
 
@@ -91,14 +92,26 @@
         width: 80%;
         margin: auto;
         margin-top: 205px;
-       
-      
+     
+    }
+    #rutas {
+        width: 100%;
+        margin: auto;
+        margin-top: 205px;
+     
+    }
 
+    #about {
+        width: 80%;
+        margin: auto;
+        margin-top: 205px;
+     
     }
     .destinos {
         width: 100%;
         color: white;
         text-align: center;
+        padding: 0;
        
        
        
@@ -129,12 +142,13 @@
  
    
     .boton {
-        background: darkorange;
+        background: #ffc72c;
         color: rgb(248, 247, 247);
         
         box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
         border-radius: 50px;
         margin-bottom: 4px;
+        padding: 5px,20px,5px,20px;
     }
     .boton:hover {
         background-color: rgb(160, 229, 160);
@@ -147,14 +161,32 @@
         text-decoration-style: none;
         border: none;
     }
+    spam {
+        color :#ffc72c;
+        font-size: 20px;
+        font-weight: 100;
+    }
+    p {
+        font-size: 20px;
+    }
+    #rutas {
+        text-align: center;
+        padding: 10px;
+    }
+
+    .contenedor {
+        margin: auto;
+        width: 100%;
+    }
+
     </style>
 
 </head>
 <body>
     <div class="sidebar" id="sidebar">
-        <a href="#" class="sidebar-item">Rutas</a>
-        <a href="#" class="sidebar-item">Reservas</a>
-        <a href="#" class="sidebar-item">Nostros</a>
+        <a href="#" class="sidebar-item" id="mostrarRutas">Rutas</a>
+        <a href="#" class="sidebar-item" id="mostrarReservas">Reservas</a>
+        <a href="#" class="sidebar-item" id="mostrarAbout">Nosotros</a>
     </div>
     
     <div class="menu-toggle" id="menu-toggle">
@@ -165,25 +197,27 @@
     <div class="content">
         <div class="banner">
             <img src="Home-Banner-01.webp" alt="No imagen" height="200px">
+           
         </div>
-        <div class="reservas">
+        <div class="reservas" id="reservas">
+            <img src="https://pb-pool.s3.amazonaws.com/RackMultipart20240228-1957-r13gag.png" alt="" id="logo">
 
             <div class="rutas">
                 <div class="destinos">
-                    <h3>Desde Los Héroes</h3>
-                    <h3>Hasta Aeropuerto</h3>
-                    <h3>ó</h3>
-                    <h3>Desde Aeropuerto</h3>
-                    <h3>Hsta Los Héroes</h3>
+                    <p>Desde <spam> Los Héroes <spam></p>
+                    <p>Hasta <spam> Aeropuerto <spam></p>
+                    <p>ó</p>
+                    <p>Desde <spam> Aeropuerto <spam></p>
+                    <p>Hasta <spam> Los Héroes <spam></p>
             
             
                 </div>
                 <div class="horarios">
-                    <h4>Horarios: Lun-Dom</h4>
-                    <h4>06:00 -23:30</h4>
-                    <h4>Horario nocturno</h4>
-                    <h4>00:00- 01:00-02:00</h4>
-                    <h4>03:0- 04:00 y 05:00</h4>
+                    <p>Horarios: Lun-Dom</p>
+                    <p>06:00 -23:30</p>
+                    <p>Horario nocturno</p>
+                    <p>00:00- 01:00-02:00</p>
+                    <p>03:0- 04:00 y 05:00</p>
                   <a href=""><button class="boton">Comprar</button></a>
 
                 </div>
@@ -191,20 +225,41 @@
             </div>
             <div class="rutas">
                 <div class="destinos">
-                    <h3>Desde Los Héroes</h3>
-                    <h3>Hasta Aeropuerto</h3>
-                    <h3>ó</h3>
-                    <h3>Desde Aeropuerto</h3>
-                    <h3>Hsta Los Héroes</h3>
+                    <p>Desde <spam> Los Héroes <spam></p>
+                    <p>Hasta <spam> Aeropuerto <spam></p>
+                    <p>ó</p>
+                    <p>Desde <spam> Aeropuerto <spam></p>
+                    <p>Hsta <spam> Los Héroes <spam></p>
             
             
                 </div>
                 <div class="horarios">
-                    <h4>Horarios: Lun-Dom</h4>
-                    <h4>06:00 -23:30</h4>
-                    <h4>Horario nocturno</h4>
-                    <h4>00:00- 01:00-02:00</h4>
-                    <h4>03:0- 04:00 y 05:00</h4>
+                    <p>Horarios: Lun-Dom</p>
+                    <p>06:00 -23:30</p>
+                    <p>Horario nocturno</p>
+                    <p>00:00- 01:00-02:00</p>
+                    <p>03:0- 04:00 y 05:00</p>
+                    <a href=""><button class="boton"> Comprar </button></a>
+
+                </div>
+
+            </div>
+            <div class="rutas">
+                <div class="destinos">
+                    <p>Desde <spam> Los Héroes <spam></p>
+                    <p>Hasta <spam> Aeropuerto <spam></p>
+                    <p>ó</p>
+                    <p>Desde <spam> Aeropuerto <spam></p>
+                    <p>Hsta <spam> Los Héroes <spam></p>
+            
+            
+                </div>
+                <div class="horarios">
+                    <p>Horarios: Lun-Dom</p>
+                    <p>06:00 -23:30</p>
+                    <p>Horario nocturno</p>
+                    <p>00:00- 01:00-02:00</p>
+                    <p>03:0- 04:00 y 05:00</p>
                     <a href=""><button class="boton">Comprar</button></a>
 
                 </div>
@@ -212,45 +267,38 @@
             </div>
             <div class="rutas">
                 <div class="destinos">
-                    <h3>Desde Los Héroes</h3>
-                    <h3>Hasta Aeropuerto</h3>
-                    <h3>ó</h3>
-                    <h3>Desde Aeropuerto</h3>
-                    <h3>Hsta Los Héroes</h3>
+                    <p>Desde <spam> Los Héroes <spam></p>
+                    <p>Hasta <spam> Aeropuerto <spam></p>
+                    <p>ó</p>
+                    <p>Desde <spam> Aeropuerto <spam></p>
+                    <p>Hsta <spam> Los Héroes <spam></p>
             
             
                 </div>
                 <div class="horarios">
-                    <h4>Horarios: Lun-Dom</h4>
-                    <h4>06:00 -23:30</h4>
-                    <h4>Horario nocturno</h4>
-                    <h4>00:00- 01:00-02:00</h4>
-                    <h4>03:0- 04:00 y 05:00</h4>
+                    <p>Horarios: Lun-Dom</p>
+                    <p>06:00 -23:30</p>
+                    <p>Horario nocturno</p>
+                    <p>00:00- 01:00-02:00</p>
+                    <p>03:0- 04:00 y 05:00</p>
                     <a href=""><button class="boton">Comprar</button></a>
 
                 </div>
 
             </div>
-            <div class="rutas">
-                <div class="destinos">
-                    <h3>Desde Los Héroes</h3>
-                    <h3>Hasta Aeropuerto</h3>
-                    <h3>ó</h3>
-                    <h3>Desde Aeropuerto</h3>
-                    <h3>Hsta Los Héroes</h3>
+        </div>
+        <div id="about">
+            <img src="https://pb-pool.s3.amazonaws.com/RackMultipart20240228-1957-r13gag.png" alt="" id="logo">
+            <h1>Sobre nosotros</h1>
             
-            
-                </div>
-                <div class="horarios">
-                    <h4>Horarios: Lun-Dom</h4>
-                    <h4>06:00 -23:30</h4>
-                    <h4>Horario nocturno</h4>
-                    <h4>00:00- 01:00-02:00</h4>
-                    <h4>03:0- 04:00 y 05:00</h4>
-                    <a href=""><button class="boton">Comprar</button></a>
-
-                </div>
-
+        </div>
+        <div id="rutas">
+            <img src="https://pb-pool.s3.amazonaws.com/RackMultipart20240228-1957-r13gag.png" alt="" id="logo">
+            <h1>Rutas</h1>
+            <div class="contenedor">
+                <p>Ruta Los Heroes -Aeropuero</p>
+            <img src="./heroes.png">
+            <img src="./los-heroes.png" class="route-image">
             </div>
         </div>
     </div>
@@ -267,6 +315,32 @@
         sidebar.classList.toggle('active');
         sidebarToggle.classList.toggle('active');
     });
+
+    $(document).ready(function(){
+
+    $("#mostrarReservas").click(function(){
+      $("#reservas").show(); 
+      $("#rutas").hide();
+      $("#about").hide();
+
+    });
+    
+    $("#mostrarRutas").click(function(){
+    $("#reservas").hide(); 
+      $("#rutas").show();
+      $("#about").hide();
+
+    });
+
+    $("#mostrarAbout").click(function(){
+    $("#reservas").hide(); 
+      $("#rutas").hide();
+      $("#about").show();
+
+    });
+   
+  });
+
     </script>
 </body>
 </html>
