@@ -10,7 +10,7 @@ body {
 .menu-toggle {
     position: fixed;
     top: 10px;
-    left: 380px;
+    right: 20px;
     cursor: pointer;
     z-index: 9999;
 }
@@ -69,8 +69,10 @@ body {
 }
 
 .content {
-    max-width: 370px;
-    margin: auto;
+    display: flex; /*se agrega display flex para poder centrar el div tanto en movil como pc*/
+    align-items: center;
+    justify-content:center;
+    padding: 10px;
 }
 
 .banner {
@@ -89,8 +91,9 @@ body {
 }
 
 .banner img {
-    position: relative;
-    margin: auto;
+    display: flex;
+    justify-content: center;
+    width: auto;
     height: 200px;
     margin: auto;
 }
@@ -99,17 +102,18 @@ body {
 
 
 .reservas {
-    width: 80%;
+    width: 100%;
     margin: auto;
     margin-top: 205px;
 
 }
 
 #rutas {
-    width: 100%;
-    margin: auto;
-    margin-top: 205px;
-    text-align: center;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   margin-top: 200px;
 
 
 }
@@ -196,8 +200,10 @@ p {
 
 .contenedor-rutas {
    
-width: 98%;
-
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
 border-radius: 10px;
 margin-bottom: 20px;
 border: 2px solid rgb(0, 81, 255);
@@ -205,4 +211,7 @@ box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
 padding-top: 20px;
 padding-bottom: 20px;
 
+}
+.contenedor-rutas img{
+    padding: 10px;
 }
