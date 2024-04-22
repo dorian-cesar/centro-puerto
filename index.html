@@ -9,6 +9,7 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/stylesheet.css">
+    
 
     <title>CentroPuerto</title>
 
@@ -30,129 +31,27 @@
     </div>
     <div class="content">
         <div class="banner">
-            <img src="./asset/Home-Banner-01.webp" alt="No imagen" >
+            <img src="./asset/Home-Banner-01.webp" alt="No imagen">
 
         </div>
         <div class="reservas" id="reservas" style="display: none;">
-            <img src="https://pb-pool.s3.amazonaws.com/RackMultipart20240228-1957-r13gag.png" alt="" id="logo">
-
-            <div class="rutas-reservas">
-                <div class="destinos">
-                    <h4>Desde <spam> Los Héroes <spam>
-                    </h4>
-                    <h4>Hasta <spam> Aeropuerto <spam>
-                    </h4>
-                    <h4>ó</h4>
-                    <h4>Desde <spam> Aeropuerto <spam>
-                    </h4>
-                    <h4>Hasta <spam> Los Héroes <spam>
-                    </h4>
-
-
-                </div>
-                <div class="horarios">
-                    <h4>Horarios: Lun-Dom</h4>
-                    <h4>06:00 -23:30</h4>
-                    <h4>Horario nocturno</h4>
-                    <h4>00:00- 01:00-02:00</h4>
-                    <h4>03:0- 04:00 y 05:00</h4>
-                    <a href=""><button class="boton">Comprar</button></a>
-
-                </div>
-
-            </div>
-
-
+           
         </div>
 
-        <div id="about"  style="display: none;">
-            <img src="https://pb-pool.s3.amazonaws.com/RackMultipart20240228-1957-r13gag.png" alt="" id="logo">
-            <h1>Sobre nosotros</h1>
-        
+        <div id="about" style="display: none;">
+            
         </div>
 
-        <div id="rutas"  >
-            <img src="https://pb-pool.s3.amazonaws.com/RackMultipart20240228-1957-r13gag.png" alt="" id="logo">
-            <h1>Rutas</h1>
-            <div class="contenedor-rutas">
-                <h4>Ruta Los Heroes -Aeropuero</h4>
-                <img src="./asset/heroes.png">
-                <hr>
-                <img src="./asset/los-heroes.png" class="route-image">
-                <a href="./formulario.html"><button class="btn btn-primary" > Comprar </button></a>
-            </div>
-            <div class="contenedor-rutas">
-                <h4>Ruta Los Heroes -Aeropuero</h4>
-                <img src="./asset/heroes.png">
-                <hr>
-                <img src="./asset/los-heroes.png" class="route-image">
-                <a href="./formulario.html"><button class="btn btn-primary" > Comprar </button></a>
-            </div>
-            <div class="contenedor-rutas">
-                <h4>Ruta Los Heroes -Aeropuero</h4>
-                <img src="./asset/heroes.png">
-                <hr>
-                <img src="./asset/los-heroes.png" class="route-image">
-                <a href="./formulario.html"><button class="btn btn-primary" > Comprar </button></a>
-            </div>
-            <div class="contenedor-rutas">
-                <h4>Ruta Los Heroes -Aeropuero</h4>
-                <img src="./asset/heroes.png">
-                <hr>
-                <img src="./asset/los-heroes.png" class="route-image">
-                <a href="./formulario.html"><button class="btn btn-primary" > Comprar </button></a>
-            </div>
+        <div id="rutas">
+           
         </div>
     </div>
 
 
 
+    <script src="js/index.js"></script>
 
-
-    <script>
-        const sidebarToggle = document.getElementById('menu-toggle');
-        const sidebar = document.getElementById('sidebar');
-
-        sidebarToggle.addEventListener('click', () => {
-            sidebar.classList.toggle('active');
-            sidebarToggle.classList.toggle('active');
-        });
-
-        $(document).ready(function () {
-
-            $("#mostrarReservas").click(function () {
-                $("#reservas").show();
-                $("#rutas").hide();
-                $("#about").hide();
-
-                $('#sidebar').toggleClass('active');
-                $(this).toggleClass('active');
-
-            });
-
-            $("#mostrarRutas").click(function () {
-                $("#reservas").hide();
-                $("#rutas").show();
-                $("#about").hide();
-
-                $('#sidebar').toggleClass('active');
-                $(this).toggleClass('active');
-
-            });
-
-            $("#mostrarAbout").click(function () {
-                $("#reservas").hide();
-                $("#rutas").hide();
-                $("#about").show();
-
-                $('#sidebar').toggleClass('active');
-                $(this).toggleClass('active');
-
-            });
-
-        });
-
-    </script>
+    
 </body>
 
 </html>
