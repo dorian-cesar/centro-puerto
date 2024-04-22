@@ -13,7 +13,7 @@
 <div id="form-content">
   <h2 class="mt-5">Formulario de Registro</h2>
 
-  <form action="submit.php" method="POST">
+  <form action="https://www.flow.cl/uri/z1QdmbMYq" method="POST">
     <div class="mb-3">
       <label for="nacionalidad" class="form-label">Nacionalidad:</label>
       <select id="nacionalidad" name="nacionalidad" class="form-select">
@@ -28,7 +28,7 @@
     </div>
     
     <div class="mb-3">
-      <legend class="col-form-label">Género:</legend>
+      <legend class="col-form-label">Tipo de documento:</legend>
       <div class="form-check">
         <input class="form-check-input" type="radio" name="genero" id="rut" value="Rut">
         <label class="form-check-label" for="rut">Rut</label>
@@ -59,7 +59,10 @@
       <input type="tel" id="telefono" name="telefono" class="form-control">
     </div>
     
-    <button type="submit" class="btn btn-primary">Enviar</button>
+    <div class="d-flex justify-content-between"> <!-- Esta clase de Bootstrap alinea los elementos a la izquierda y a la derecha -->
+      <button type="button" class="btn btn-secondary" onclick="history.back()">Volver</button>
+      <button type="submit" class="btn btn-primary">Enviar</button>
+  </div>
   </form>
 </div>
 

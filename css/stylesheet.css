@@ -73,7 +73,7 @@ body {
     margin: auto;
 }
 
-.content .banner {
+.banner {
 
     height: 200px;
     width: 100%;
@@ -88,10 +88,15 @@ body {
 
 }
 
-.content .banner img {
-
+.banner img {
+    position: relative;
+    margin: auto;
+    height: 200px;
     margin: auto;
 }
+
+
+
 
 .reservas {
     width: 80%;

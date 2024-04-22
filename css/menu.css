@@ -26,12 +26,12 @@ body {
 
   .custom-select,
   .custom-select:focus {
-    height: 50px; /* Ajusta la altura según tus necesidades */
+    height: 40px; /* Ajusta la altura según tus necesidades */
     padding: 10px;
     width: 90%;
   }
   .custom-input {
-    height: 50px; /* Ajusta la altura según tus necesidades */
+    height: 40px; /* Ajusta la altura según tus necesidades */
     padding: 10px;
   }
 
