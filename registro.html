@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/menu.css" />
+    <link rel="stylesheet" href="css/stylesheet.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/6bc758b643.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="https://www.flow.cl/uri/z1QdmbMYq" method="POST">
+        <div class="contenedor-registro">
+            <div class="logo">
+                <img src="https://pb-pool.s3.amazonaws.com/RackMultipart20240228-1957-r13gag.png" alt="" />
+                <p>
+                    <i class="fa-solid fa-qrcode"></i> Escanea el código QR al subir al
+                    bus para validar tu pasaje.
+                </p>
+            </div>
+
+            <div class="registro">
+                <div id="qrCode" class="qr"></div>
+                <ul>
+                    <i class="fa-solid fa-map-pin"></i><span> Origen: </span>Los Heroes - Santiago
+                </ul>
+                <ul>
+                    <i class="fa-solid fa-location-dot"></i><span> Destino: </span>Aeropuesrto de Santiago(SCL)
+                </ul>
+                <ul>
+                    <span> N° de pasaje: </span>0000007090
+                </ul>
+                <ul>
+                    <span>Feha de compra: </span>17/04/2024
+                </ul>
+            </div>
+            <div class="registro">
+                <ul>
+                    <span> Pasajero: </span>Alba Rodriguez
+                </ul>
+                <ul>
+                    <span> N° de documento: </span>27.389.846-8
+                </ul>
+                <ul>
+                    <span> Correo: </span>alba.rodriguez@wit.la
+                </ul>
+                <div class="total">
+                    <ul>
+                        <span>MONTO TOTAL CLP$ 2.000</span>
+                    </ul>
+                </div>
+            </div>
+            <div class="registro">
+                <p>
+                    <i class="fa-solid fa-circle-info"></i> Información importante sobre
+                    tu pasaje en blanco
+                </p>
+                <ul>
+                    <li>Este pasaje tiene una validez de 90 dias desde su emisión.</li>
+                    <li>
+                        Este pasaje será valido para cualquier paradero, ruta y dirección
+                        del servicio de Centropuerto.
+                    </li>
+                    <li>
+                        No es posible cambios de hora o fechas de os pasajes, ni en
+                        oficinas ni en internet.
+                    </li>
+                    <li>
+                        No se aceptarán boletos rotos, enmermados, ilegibles o con
+                        adulteración.
+                    </li>
+                    <li>
+                        Cada pasajero tendrá derecho a llevar 2 piezas de equipaje u el
+                        tamaño maximo no puede exceder el de una maleta grande.
+                    </li>
+                    <li>
+                        El traslado de mascota está permitido siempre que este vayan en
+                        jaula o caja de traslado correspondiente.
+                    </li>
+                    <li>
+                        En caso que u equipaje tenga un valor mayor a 5 UTM, declárelo
+                        solicitando en nuestras oficinas de Aeropuesrto un comprobante por
+                        cada equipaje, previo inventario. Todo reclamo de equipaje sólo es
+                        válido al momento de descender del bus y previa presentación de su
+                        comprobante de pago.
+                    </li>
+                </ul>
+            </div>
+            <div class="registro2">
+                <p>¿Cómo Contactarnos?</p>
+                <div>
+                    <ul>
+                        <i class="fa-solid fa-phone"></i>
+                        +56 2 3304 8632
+                    </ul>
+                    <ul>
+                        <i class="fa-brands fa-whatsapp"></i>
+                        +56 2 3304 8632
+                    </ul>
+                    <ul>
+                        <i class="fa-regular fa-envelope"></i>
+                        +56 2 3304 8632
+                    </ul>
+                </div>
+            </div>
+            <div class="d-flex justify-content-between p-3">
+                <!-- Esta clase de Bootstrap alinea los elementos a la izquierda y a la derecha -->
+                <button type="button" class="btn btn-secondary" onclick="history.back()">
+                    Volver
+                </button>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </div>
+        </div>
+    </form>
+    <script src="js/qr.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</body>
+
+</html>
