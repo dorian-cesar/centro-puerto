@@ -66,10 +66,18 @@ body {
 }
 
 .content {
+<<<<<<< HEAD
   display: flex; /*se agrega display flex para poder centrar el div tanto en movil como pc*/
   align-items: center;
   justify-content: center;
   padding: 10px;
+=======
+    display: flex;
+    /*se agrega display flex para poder centrar el div tanto en movil como pc*/
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+>>>>>>> b0d59b27bed5b82e2c02b7b1a91b0e0fa487d2c5
 }
 
 .banner {
@@ -99,11 +107,21 @@ body {
 }
 
 #rutas {
+<<<<<<< HEAD
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-top: 200px;
+=======
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 200px;
+
+
+>>>>>>> b0d59b27bed5b82e2c02b7b1a91b0e0fa487d2c5
 }
 
 .rutas-reservas {
@@ -111,9 +129,17 @@ body {
 }
 
 #about {
+<<<<<<< HEAD
   width: 100%;
   margin: auto;
   margin-top: 205px;
+=======
+    width: 100%;
+    margin: auto;
+    margin-top: 205px;
+
+
+>>>>>>> b0d59b27bed5b82e2c02b7b1a91b0e0fa487d2c5
 }
 
 .destinos {
@@ -175,6 +201,7 @@ p {
 }
 
 .contenedor-rutas {
+<<<<<<< HEAD
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -226,6 +253,23 @@ p {
 
 .qr{
     margin-left: 70px;
+=======
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: 2px solid rgb(0, 81, 255);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+}
+
+.contenedor-rutas img {
+>>>>>>> b0d59b27bed5b82e2c02b7b1a91b0e0fa487d2c5
     padding: 10px;
     
 }
