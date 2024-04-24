@@ -186,6 +186,7 @@ p {
   padding-top: 20px;
   padding-bottom: 20px;
 }
+
 .contenedor-rutas img {
   padding: 10px;
 }
@@ -303,4 +304,40 @@ p {
   margin: 20px 0;
   font-size: 20px;
   text-align: center;
+}
+
+.content-nosotros{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.contenedor-nosotros{
+
+  
+  max-width: 370px;
+  margin: auto;
+  border-radius: 30px;
+  padding-bottom: 20px;
+  border: 2px solid rgb(0, 81, 255);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  padding: 20px 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.parrafos-nosotros{
+  text-align:justify;
+  font-size: 12px;
+}
+
+.parrafos-nosotros h4{
+  padding:10px 0 30px 0 ;
+  text-align: center;
+  font-weight: 900;
+}
+
+.parrafos-nosotros span{
+  font-weight: 700;
 }
