@@ -114,13 +114,16 @@
             const rut = localStorage.getItem("rut");
             const correo = localStorage.getItem("correo");
             const concatenar = nombre + " " + apellido;
+            
+            
 
             // Mostrar los valores en la tarjeta
             $("#nombreP").text(concatenar);
-
             $("#rutP").text(rut);
             $("#correoP").text(correo);
         });
+
+
     </script>
     <script src="js/qr.js"></script>
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
