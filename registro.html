@@ -26,17 +26,18 @@
                 <div id="qrCode" class="qr"></div>
                 <p>
                     <i class="fa-solid fa-map-pin"></i>
-                    Origen: 
+                    Origen:
                     <span>Los Heroes - Santiago</span>
                 </p>
                 <p><i class="fa-solid fa-location-dot"></i>Destino:<span> Aeropuesrto de Santiago(SCL)</span></p>
-                <p>N° de pasaje: <span>0000007090</span></p>
-                <p>Feha de compra: <span>17/04/2024</span></p>
+                <p>N° de pasaje: <span id="boleto">0000007090</span></p>
+                <p>Feha de compra: <span id="fechaActual">17/04/2024</span></p>
             </div>
             <div class="registro">
                 <p>Nombre: <span id="nombreP"></span></p>
                 <p>N° de documento: <span id="rutP"></span></p>
                 <p>Correo: <span id="correoP"></span></p>
+                <p>Telefono: <span id="telefono">123456</span></p>
                 <div class="total">
                     <ul>
                         <span>MONTO TOTAL CLP$ 2.000</span>
@@ -104,31 +105,109 @@
                 <a href="index.html">
                     <button type="button" class="btn btn-primary">inicio</button>
                 </a>
-               
+
             </div>
         </div>
     </form>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script>
         $(document).ready(function () {
             // Obtener los valores del localStorage
             const nombre = localStorage.getItem("nombre");
+            const key = localStorage.getItem("key");
             const apellido = localStorage.getItem("apellido");
             const rut = localStorage.getItem("rut");
             const correo = localStorage.getItem("correo");
+            const telefono = localStorage.getItem("telefono");
+
+
             const concatenar = nombre + " " + apellido;
+            var fechaActual = new Date();
+            var fechaSolo = fechaActual.toLocaleDateString('es-CL');
+            console.log("Fecha actual:", fechaSolo);
             
-            
+
+            const datos = {
+                "nombre": nombre,
+                "apellido": apellido,
+                "key": key,
+                "rut": rut,
+                "correo": correo,
+                "fechaCompra":fechaSolo,
+                "telefono":telefono
+            }
+
+
+
+
 
             // Mostrar los valores en la tarjeta
             $("#nombreP").text(concatenar);
             $("#rutP").text(rut);
             $("#correoP").text(correo);
+            $("#boleto").text(key);
+            $("#fechaActual").text(fechaSolo);
+            $("#telefono").text(telefono);
+            
+
+
+            generarQR(key);
+
+            enviarCorreo(datos);
+            grabar(datos);
+
+            
+
+    
+
+            function generarQR(texto) {
+                var qr = new QRCode(document.getElementById("qrCode"), {
+                    text: texto,
+                    width: 150,
+                    height: 150
+                });
+            }
+
+            function enviarCorreo(datos) {
+                axios.post('./php/enviar_correo.php', (datos), {
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                })
+                    .then(function (response) {
+                        console.log(response.data);
+                        alert('Correo enviado..');
+
+                    })
+                    .catch(function (error) {
+                        console.log(error);
+                        alert('Error al enviar Correo, inténtalo de nuevo.');
+                    });
+            }
+
+
+            function grabar(datos) {
+                axios.post('./php/grabar.php', (datos), {
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                })
+                    .then(function (response) {
+                        console.log(response.data);
+                        alert('Datos grabados..');
+
+                    })
+                    .catch(function (error) {
+                        console.log(error);
+                        alert('Error al grabar datos, inténtalo de nuevo.');
+                    });
+            }
         });
 
 
     </script>
-    <script src="js/qr.js"></script>
+
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 </body>
 
