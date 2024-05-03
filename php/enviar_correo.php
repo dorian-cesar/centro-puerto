@@ -9,14 +9,15 @@ require '../vendor/autoload.php'; // Asegúrate de tener la librería PHPMailer 
 // Recibe datos del formulario
 $datos = json_decode(file_get_contents('php://input'), true);
 
+
 // Extraer los datos
 $nombre = $datos['nombre'];
 $apellido = $datos['apellido'];
-
 $rut = $datos['rut'];
 $numTicket = $datos['key'];    
 $fechaComra=$datos['fechaCompra'];
 $correo = $datos['correo'];
+$precio = $datos['precio'];
 
 
 
@@ -35,7 +36,7 @@ try {
 
     // Destinatario
     $mail->setFrom('desarrollo.wit@gmail.com', 'Desarrollo Wit');
-    $mail->addAddress('dgonzalez@wit.la', 'Alexis Tobar S');
+    $mail->addAddress('tobaralexis.89@gmail.com', 'Alexis Tobar S');
 
     // Contenido del correo
     $mail->isHTML(true);
@@ -44,14 +45,11 @@ try {
 
     $htmlContent = str_replace('{nombre}', $nombre, $htmlContent);
     $htmlContent = str_replace('{apellido}', $apellido, $htmlContent);
-   
     $htmlContent = str_replace('{numTicket}', $numTicket, $htmlContent);
-  
     $htmlContent = str_replace('{correo}', $correo, $htmlContent);
-   
     $htmlContent = str_replace('{rut}', $rut, $htmlContent);
-
     $htmlContent = str_replace('{fechaCompra}', $fechaComra, $htmlContent);
+    $htmlContent = str_replace('{precio}', $precio, $htmlContent);
    
 
 

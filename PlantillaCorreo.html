@@ -121,14 +121,46 @@ margin-bottom: 10px;">
         </div>
     </form>
 
-
-
     <script>
         $(document).ready(function () {
+            // Obtener los valores del localStorage
+            const nombre = localStorage.getItem("nombre");
             const key = localStorage.getItem("key");
+            const apellido = localStorage.getItem("apellido");
+            const rut = localStorage.getItem("rut");
+            const correo = localStorage.getItem("correo");
+            const telefono = localStorage.getItem("telefono");
+            const precio = localStorage.getItem("precio");
+    
+            const concatenar = nombre + " " + apellido;
+            var fechaActual = new Date();
+            var fechaSolo = fechaActual.toLocaleDateString("es-CL");
+            console.log("Fecha actual:", fechaSolo);
+    
+            const datos = {
+                "nombre": nombre,
+                "apellido": apellido,
+                "key": key,
+                "rut": rut,
+                "correo": correo,
+                "fechaCompra": fechaSolo,
+                "telefono": telefono,
+                "precio": precio
+            }
+    
+            // Mostrar los valores en la tarjeta
+            $("#nombreP").text(concatenar);
+            $("#rutP").text(rut);
+            $("#correoP").text(correo);
+            $("#boleto").text(key);
+            $("#fechaActual").text(fechaSolo);
+            $("#telefono").text(telefono);
+            $("#precioP").text(precio);
+    
             generarQR(key);
-
-
+            enviarCorreo(datos);
+            grabar(datos);
+    
             function generarQR(texto) {
                 var qr = new QRCode(document.getElementById("qrCode"), {
                     text: texto,
@@ -136,8 +168,39 @@ margin-bottom: 10px;">
                     height: 150
                 });
             }
-        })
-
+    
+            function enviarCorreo(datos) {
+                axios.post("./php/enviar_correo.php", (datos), {
+                    headers: {
+                        "Content-Type": "application/json"
+                    }
+                })
+                .then(function (response) {
+                    console.log(response.data);
+                    alert("Correo enviado..");
+                })
+                .catch(function (error) {
+                    console.log(error);
+                    alert("Error al enviar Correo, inténtalo de nuevo.");
+                });
+            }
+    
+            function grabar(datos) {
+                axios.post("./php/grabar.php", (datos), {
+                    headers: {
+                        "Content-Type": "application/json"
+                    }
+                })
+                .then(function (response) {
+                    console.log(response.data);
+                    alert("Datos grabados..");
+                })
+                .catch(function (error) {
+                    console.log(error);
+                    alert("Error al grabar datos, inténtalo de nuevo.");
+                });
+            }
+        });
     </script>
 
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>

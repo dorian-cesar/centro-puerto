@@ -3,7 +3,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$database = "centro-puerto";
+$database = "tickets";
 
 // Crear conexión
 $conn = new mysqli($servername, $username, $password, $database);
@@ -20,17 +20,16 @@ $data = json_decode(file_get_contents('php://input'), true);
 // Extraer los datos
 $nombre = $data['nombre'];
 $apellido = $data['apellido'];
-
 $fechaCompra =$data['fechaCompra'];
 $fecha_convertida = date("Y-m-d", strtotime($fechaCompra));
-$numTicket = $data['key'];
+$key = $data['key'];
 $telefono = $data['telefono'];
 $correo = $data['correo'];
-$precio = 2000;
+$precio = $data['precio'];
 
 // Insertar los datos en la base de datos
 $sql = "INSERT INTO tickets (nombre, apellido, fecha, numTicket, telefono, correo, precio) 
-VALUES ('$nombre', '$apellido', '$fecha_convertida', '$numTicket', '$telefono', '$correo', '$precio')";
+VALUES ('$nombre', '$apellido', '$fecha_convertida', '$key', '$telefono', '$correo', '$precio')";
 
 if ($conn->query($sql) === TRUE) {
     echo "Registro insertado correctamente!!";

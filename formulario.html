@@ -65,6 +65,9 @@
         <input type="tel" id="telefono" name="telefono" class="form-control" required>
       </div>
 
+      <div class="mb-3">
+        <input type="number" id="precio" name="precio" value="2000" class="form-control" hidden>
+
       <div class="d-flex justify-content-between">
         <!-- Esta clase de Bootstrap alinea los elementos a la izquierda y a la derecha -->
         <button type="button" class="btn btn-secondary" onclick="history.back()">Volver</button>
@@ -100,6 +103,8 @@
         const rut = $('#rut').val();
         const correo = $('#correo').val();
         const telefono = $('#telefono').val();
+        const precio = $('#precio').val();
+
 
 
         // Guardar los valores en el localStorage
@@ -109,6 +114,7 @@
         localStorage.setItem('rut', rut);
         localStorage.setItem('correo', correo);
         localStorage.setItem('telefono', telefono);
+        localStorage.setItem('precio', precio);
 
         // Redirigir a la página de destino
         window.location.href = 'registro.html';

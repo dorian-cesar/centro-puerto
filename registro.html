@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="css/stylesheet.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
     <script src="https://kit.fontawesome.com/6bc758b643.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"
+    integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <title>Registro</title>
 </head>
 
@@ -23,25 +26,27 @@
             </div>
 
             <div class="registro">
-                <div id="qrCode" class="qr"></div>
+                <div id="captura">
+                    <div id="qrCode" class="qr"></div>
+                </div>
                 <p>
                     <i class="fa-solid fa-map-pin"></i>
                     Origen:
                     <span>Los Heroes - Santiago</span>
                 </p>
                 <p><i class="fa-solid fa-location-dot"></i>Destino:<span> Aeropuesrto de Santiago(SCL)</span></p>
-                <p>N° de pasaje: <span id="boleto">0000007090</span></p>
-                <p>Feha de compra: <span id="fechaActual">17/04/2024</span></p>
+                <p>N° de pasaje: <span id="boleto"></span></p>
+                <p>Feha de compra: <span id="fechaActual"></span></p>
             </div>
             <div class="registro">
                 <p>Nombre: <span id="nombreP"></span></p>
                 <p>N° de documento: <span id="rutP"></span></p>
                 <p>Correo: <span id="correoP"></span></p>
-                <p>Telefono: <span id="telefono">123456</span></p>
+                <p>Telefono: <span id="telefono"></span></p>
                 <div class="total">
-                    <ul>
-                        <span>MONTO TOTAL CLP$ 2.000</span>
-                    </ul>
+                    <p>
+                        MONTO TOTAL CLP$<span id="precioP"></span>
+                    </p>
                 </div>
             </div>
             <div class="registro">
@@ -120,13 +125,14 @@
             const rut = localStorage.getItem("rut");
             const correo = localStorage.getItem("correo");
             const telefono = localStorage.getItem("telefono");
+            const precio = localStorage.getItem("precio");
 
 
             const concatenar = nombre + " " + apellido;
             var fechaActual = new Date();
             var fechaSolo = fechaActual.toLocaleDateString('es-CL');
             console.log("Fecha actual:", fechaSolo);
-            
+
 
             const datos = {
                 "nombre": nombre,
@@ -134,8 +140,10 @@
                 "key": key,
                 "rut": rut,
                 "correo": correo,
-                "fechaCompra":fechaSolo,
-                "telefono":telefono
+                "fechaCompra": fechaSolo,
+                "telefono": telefono,
+                "precio": precio
+
             }
 
 
@@ -149,7 +157,8 @@
             $("#boleto").text(key);
             $("#fechaActual").text(fechaSolo);
             $("#telefono").text(telefono);
-            
+            $("#precioP").text(precio);
+
 
 
             generarQR(key);
@@ -157,9 +166,6 @@
             enviarCorreo(datos);
             grabar(datos);
 
-            
-
-    
 
             function generarQR(texto) {
                 var qr = new QRCode(document.getElementById("qrCode"), {
@@ -203,8 +209,20 @@
                         alert('Error al grabar datos, inténtalo de nuevo.');
                     });
             }
-        });
 
+            
+                // Función para descargar automáticamente al recargar la página la imagen qr
+                window.onload = function () {
+                    html2canvas(document.getElementById('captura')).then(function (canvas) {
+                        var link = document.createElement('a');
+                        link.download = 'contenido.png';
+                        link.href = canvas.toDataURL();
+                        link.click();
+                    });
+                };
+
+
+        });
 
     </script>
 
