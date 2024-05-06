@@ -36,7 +36,7 @@ try {
 
     // Destinatario
     $mail->setFrom('desarrollo.wit@gmail.com', 'Desarrollo Wit');
-    $mail->addAddress('tobaralexis.89@gmail.com', 'Alexis Tobar S');
+    $mail->addAddress('dgonzalez@wit.la', 'Alexis Tobar S');
 
     // Contenido del correo
     $mail->isHTML(true);
