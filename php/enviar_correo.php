@@ -50,6 +50,7 @@ try {
     $htmlContent = str_replace('{rut}', $rut, $htmlContent);
     $htmlContent = str_replace('{fechaCompra}', $fechaComra, $htmlContent);
     $htmlContent = str_replace('{precio}', $precio, $htmlContent);
+    
    
 
 
