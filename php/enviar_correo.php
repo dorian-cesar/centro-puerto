@@ -11,6 +11,7 @@ $datos = json_decode(file_get_contents('php://input'), true);
 
 
 // Extraer los datos
+
 $nombre = $datos['nombre'];
 $apellido = $datos['apellido'];
 $rut = $datos['rut'];
@@ -18,9 +19,8 @@ $numTicket = $datos['key'];
 $fechaComra=$datos['fechaCompra'];
 $correo = $datos['correo'];
 $precio = $datos['precio'];
-
-
-
+$url = "http://localhost/centro-puerto/asset/boletos/" . $numTicket . ".png";
+$url2 = "https://masgps-bi.wit.la/centro-puerto/asset/boletos/1CJaKutAcy.png";
 // Configuración de PHPMailer
 $mail = new PHPMailer(true);
 
@@ -36,7 +36,7 @@ try {
 
     // Destinatario
     $mail->setFrom('desarrollo.wit@gmail.com', 'Desarrollo Wit');
-    $mail->addAddress('dgonzalez@wit.la', 'Alexis Tobar S');
+    $mail->addAddress('tobaralexis.89@gmail.com', 'Alexis Tobar S');
 
     // Contenido del correo
     $mail->isHTML(true);
@@ -50,12 +50,9 @@ try {
     $htmlContent = str_replace('{rut}', $rut, $htmlContent);
     $htmlContent = str_replace('{fechaCompra}', $fechaComra, $htmlContent);
     $htmlContent = str_replace('{precio}', $precio, $htmlContent);
+    $htmlContent = str_replace('{url}', $url, $htmlContent);
+    $htmlContent = str_replace('{url2}', $url2, $htmlContent);
     
-   
-
-
-    
-
     $mail->Subject = 'Nuevo mensaje de contacto';
     $mail->Body = $htmlContent; 
 
