@@ -82,6 +82,7 @@ body {
   top: 0;
   /* Lo posiciona al principio de la página */
   left: 0;
+  z-index: 100;
 }
 
 .banner img {
@@ -314,8 +315,6 @@ p {
 }
 
 .contenedor-nosotros{
-
-  
   max-width: 370px;
   margin: auto;
   border-radius: 30px;
@@ -340,4 +339,27 @@ p {
 
 .parrafos-nosotros span{
   font-weight: 700;
+}
+
+
+.contenedor-preguntas{
+  max-width: 370px;
+  margin: auto;
+  border-radius: 30px;
+  padding-bottom: 20px;
+  border: 2px solid rgb(0, 81, 255);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  padding: 20px 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.contenedor-preguntas button{
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.contenedor-preguntas p{
+  font-size: 15px;
+  text-align: justify;
 }

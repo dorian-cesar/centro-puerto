@@ -8,12 +8,14 @@ sidebarToggle.addEventListener('click', () => {
 
 $(document).ready(function () {
 
-    $("#reservas").load("reservas.html");
+    /* $("#reservas").load("reservas.html"); */
     $("#rutas").load("rutas.html");
     $("#about").load("about.html");
+    $("#faq").load("faq.html");
 
-    $("#mostrarReservas").click(function () {
-        $("#reservas").show();
+    $("#mostrarFaq").click(function () {
+        /* $("#reservas").show(); */
+        $("#faq").show();
         $("#rutas").hide();
         $("#about").hide();
 
@@ -23,7 +25,8 @@ $(document).ready(function () {
     });
 
     $("#mostrarRutas").click(function () {
-        $("#reservas").hide();
+        /* $("#reservas").hide(); */
+        $("#faq").hide();
         $("#rutas").show();
         $("#about").hide();
 
@@ -33,7 +36,8 @@ $(document).ready(function () {
     });
 
     $("#mostrarAbout").click(function () {
-        $("#reservas").hide();
+        /* $("#reservas").hide(); */
+        $("#faq").hide();
         $("#rutas").hide();
         $("#about").show();
 
