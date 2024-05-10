@@ -182,7 +182,7 @@
             }
 
             function enviarCorreo(datos) {
-                axios.post('.https://desarrollo.wit.la/centro-puerto/enviar_correo.php', (datos), {
+                axios.post('.https://desarrollo.wit.la/centro-puerto/php/enviar_correo.php', (datos), {
                     headers: {
                         'Content-Type': 'application/json'
                     }
@@ -200,7 +200,7 @@
 
 
             function grabar(datos) {
-                axios.post('https://desarrollo.wit.la/centro-puerto/grabar.php', (datos), {
+                axios.post('https://desarrollo.wit.la/centro-puerto/php/grabar.php', (datos), {
                     headers: {
                         'Content-Type': 'application/json'
                     }
@@ -227,7 +227,7 @@
                     var imgData = canvas.toDataURL('image/png');
                     $.ajax({
                         type: 'POST',
-                        url: 'https://desarrollo.wit.la/centro-puerto/guardar_imagen.php',
+                        url: 'https://desarrollo.wit.la/centro-puerto/php/guardar_imagen.php',
                         data: {
                             imagenData: imgData,
                             nameImg: key
@@ -249,7 +249,7 @@
                 // Enviar el título a PHP mediante AJAX
                 $.ajax({
                     type: "POST",
-                    url: "https://desarrollo.wit.la/centro-puerto/enviar_correo.php'", // Reemplaza "tuscript.php" con la ruta a tu script PHP
+                    url: "https://desarrollo.wit.la/centro-puerto/php/enviar_correo.php'", // Reemplaza "tuscript.php" con la ruta a tu script PHP
                     data: { titulo: tituloGuardado }, // Envía el título como datos a tu script PHP
                     success: function (response) {
                         console.log("Título enviado correctamente a PHP");
