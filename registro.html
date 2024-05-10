@@ -227,7 +227,7 @@
                     var imgData = canvas.toDataURL('image/png');
                     $.ajax({
                         type: 'POST',
-                        url: './php/guardar_imagen.php',
+                        url: 'https:/desarrollo.wit.la/centro-puerto/guardar_imagen.php',
                         data: {
                             imagenData: imgData,
                             nameImg: key
