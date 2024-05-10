@@ -182,7 +182,7 @@
             }
 
             function enviarCorreo(datos) {
-                axios.post('./php/enviar_correo.php', (datos), {
+                axios.post('.https://desarrollo.wit.la/centro-puerto/enviar_correo.php', (datos), {
                     headers: {
                         'Content-Type': 'application/json'
                     }
@@ -200,7 +200,7 @@
 
 
             function grabar(datos) {
-                axios.post('./php/grabar.php', (datos), {
+                axios.post('https://desarrollo.wit.la/centro-puerto/grabar.php', (datos), {
                     headers: {
                         'Content-Type': 'application/json'
                     }
@@ -227,7 +227,7 @@
                     var imgData = canvas.toDataURL('image/png');
                     $.ajax({
                         type: 'POST',
-                        url: 'https:/desarrollo.wit.la/centro-puerto/guardar_imagen.php',
+                        url: './php/guardar_imagen.php',
                         data: {
                             imagenData: imgData,
                             nameImg: key
