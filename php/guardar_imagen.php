@@ -8,7 +8,7 @@ if(isset($_POST['imagenData'])){
     $nombreArchivo = 'imagen_'.time().'.png';
    
 
-    file_put_contents('../asset/boletos/'.$nameImagen.'.png', $imagenData);
+    file_put_contents('./boletos/'.$nameImagen.'.png', $imagenData);
 
     echo $nombreArchivo;
 } else {
