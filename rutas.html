@@ -1,30 +1,138 @@
 <img src="https://pb-pool.s3.amazonaws.com/RackMultipart20240228-1957-r13gag.png" alt="" id="logo">
-            <h1>Rutas</h1>
-            <div class="contenedor-rutas">
-                <h4>Ruta Los Heroes -Aeropuero</h4>
-                <img src="./asset/heroes.png">
-                <hr>
-                <img src="./asset/los-heroes.png" class="route-image">
-                <a href="./formulario.html"><button class="btn btn-primary" > Comprar </button></a>
-            </div>
-            <div class="contenedor-rutas">
-                <h4>Ruta Los Heroes -Aeropuero</h4>
-                <img src="./asset/heroes.png">
-                <hr>
-                <img src="./asset/los-heroes.png" class="route-image">
-                <a href="./formulario.html"><button class="btn btn-primary" > Comprar </button></a>
-            </div>
-            <div class="contenedor-rutas">
-                <h4>Ruta Los Heroes -Aeropuero</h4>
-                <img src="./asset/heroes.png">
-                <hr>
-                <img src="./asset/los-heroes.png" class="route-image">
-                <a href="./formulario.html"><button class="btn btn-primary" > Comprar </button></a>
-            </div>
-            <div class="contenedor-rutas">
-                <h4>Ruta Los Heroes -Aeropuero</h4>
-                <img src="./asset/heroes.png">
-                <hr>
-                <img src="./asset/los-heroes.png" class="route-image">
-                <a href="./formulario.html"><button class="btn btn-primary" > Comprar </button></a>
-            </div>
+<h1>Rutas</h1>
+<div class="contenedor-rutas">
+    <h3>Ruta Los Heroes - Aeropuerto</h3>
+    <img src="./asset/heroes.png">
+    <hr>
+    <img src="./asset/los-heroes.png" class="route-image">
+    <h4>Compra tu Pasaje</h4>
+    <div class="direccionRutas">
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="tipoPasaje1" id="ida1" required>
+            <label class="form-check-label" for="ida1">General</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="tipoPasaje1" id="idaVuelta1" required>
+            <label class="form-check-label" for="idaVuelta1">Ida y Regreso</label>
+        </div>
+    </div>
+    <div>
+        <a id="comprarBoton1" href="#" class="boton-comprar"> Comprar </a>
+    </div>  
+</div>
+<div class="contenedor-rutas">
+    <h3>Ruta Pajaritos - Aeropuerto</h3>
+    <img src="./asset/pajaritos.png">
+    <hr>
+    <img src="./asset/ruta-pajaritos.png" class="route-image">
+    <h4>Compra tu Pasaje</h4>
+    <div class="direccionRutas">
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="tipoPasaje2" id="ida2" required>
+            <label class="form-check-label" for="ida2">General</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="tipoPasaje2" id="idaVuelta2" required>
+            <label class="form-check-label" for="idaVuelta2">Ida y Regreso</label>
+        </div>
+    </div>
+    <div>
+        <a id="comprarBoton2" href="#" class="boton-comprar"> Comprar </a>
+    </div>
+</div>
+<div class="contenedor-rutas">
+    <h3>Ruta Terminal Sur - Aeropuerto</h3>
+    <img src="./asset/terminal.png">
+    <hr>
+    <img src="./asset/terminal-sur.png" class="route-image">
+    <h4>Compra tu Pasaje</h4>
+    <div class="direccionRutas">
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="tipoPasaje3" id="ida3" required>
+            <label class="form-check-label" for="ida3">General</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="tipoPasaje3" id="idaVuelta3" required>
+            <label class="form-check-label" for="idaVuelta3">Ida y Regreso</label>
+        </div>
+    </div>
+    <div>
+        <a id="comprarBoton3" href="#" class="boton-comprar"> Comprar </a>
+    </div>
+</div>
+<div class="contenedor-rutas">
+    <h3>Ruta Maipu - Aeropuerto</h3>
+    <img src="./asset/heroes.png">
+    <hr>
+    <img src="./asset/maipu.png" class="route-image">
+    <h4>Compra tu Pasaje</h4>
+    <div class="direccionRutas">
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="tipoPasaje4" id="ida4" required>
+            <label class="form-check-label" for="ida4">Solo Ida</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="tipoPasaje4" id="idaVuelta4" required>
+            <label class="form-check-label" for="idaVuelta4">Ida y Vuelta</label>
+        </div>
+    </div>
+    <div>
+        <a id="comprarBoton4" href="#" class="boton-comprar"> Comprar </a>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    // Función para redirigir según la selección del radio button y el clic en el botón Comprar
+    function redireccionar(id, vistaIda, vistaIdaVuelta) {
+        const radioIda = document.getElementById(id);
+        const botonComprar = document.getElementById('comprarBoton' + id.slice(-1));
+
+        // Función para actualizar el href del botón Comprar
+        function actualizarHref() {
+            if (radioIda.checked) {
+                botonComprar.href = vistaIda;
+            } else {
+                botonComprar.href = vistaIdaVuelta;
+            }
+        }
+
+        // Listener para el cambio en los radio buttons
+        radioIda.addEventListener('change', actualizarHref);
+
+        // Listener para el clic en el botón Comprar
+        botonComprar.addEventListener('click', function() {
+            actualizarHref(); // Actualiza el href antes de redirigir
+        });
+
+        // Llama a actualizarHref para inicializar el href del botón
+        actualizarHref();
+    }
+
+    // Llama a la función para cada contenedor
+    redireccionar("ida1", "formularioIda.html", "formularioIda-vuelta.html");
+    redireccionar("ida2", "formularioIda.html", "formularioIda-vuelta.html");
+    redireccionar("ida3", "formularioIda.html", "formularioIda-vuelta.html");
+    redireccionar("ida4", "formularioIda.html", "formularioIda-vuelta.html");
+</script>
+<script>
+    $(document).ready(function(){
+        // Mostrar el título guardado en el formulario al cargar la página
+        var tituloGuardado = localStorage.getItem("tituloSeleccionado");
+        if(tituloGuardado) {
+            $("#tituloSeleccionado").val(tituloGuardado);
+        }
+        
+        $(".contenedor-rutas").click(function(){
+            // Obtener el texto del h4 dentro del contenedor clicado
+            var titulo = $(this).find("h3").text();
+            // Guardar el título en localStorage
+            localStorage.setItem("tituloSeleccionado", titulo);
+            // Mostrar el título en el formulario
+            $("#tituloSeleccionado").val(titulo);
+        });
+    });
+    </script>
+
+
+            

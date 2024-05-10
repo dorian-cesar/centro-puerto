@@ -188,6 +188,26 @@ p {
   padding-bottom: 20px;
 }
 
+.direccionRutas{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  padding: 20px;
+}
+
+.boton-comprar{
+  background-color:rgb(0, 81, 255);
+  padding: 10px 130px;
+  color: #fff;
+  border-radius: 10px;
+}
+
+.boton-comprar:hover{
+  background-color:rgb(47, 112, 252);
+  color: #ffc72c;
+}
+
 .contenedor-rutas img {
   padding: 10px;
 }
@@ -363,3 +383,4 @@ p {
   font-size: 15px;
   text-align: justify;
 }
+

@@ -18,6 +18,7 @@ if ($conn->connect_error) {
 $data = json_decode(file_get_contents('php://input'), true);
 
 // Extraer los datos
+$tituloGuardado = $data['tituloSeleccionado'];
 $nombre = $data['nombre'];
 $apellido = $data['apellido'];
 $fechaCompra =$data['fechaCompra'];
@@ -28,8 +29,8 @@ $correo = $data['correo'];
 $precio = $data['precio'];
 
 // Insertar los datos en la base de datos
-$sql = "INSERT INTO tickets (nombre, apellido, fecha, numTicket, telefono, correo, precio) 
-VALUES ('$nombre', '$apellido', '$fecha_convertida', '$key', '$telefono', '$correo', '$precio')";
+$sql = "INSERT INTO tickets (nombre, apellido, fecha, numTicket, telefono, correo, precio,rutas) 
+VALUES ('$nombre', '$apellido', '$fecha_convertida', '$key', '$telefono', '$correo', '$precio','$tituloGuardado')";
 
 if ($conn->query($sql) === TRUE) {
     echo "Registro insertado correctamente!!";

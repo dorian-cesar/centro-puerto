@@ -11,7 +11,7 @@ $datos = json_decode(file_get_contents('php://input'), true);
 
 
 // Extraer los datos
-
+$tituloGuardado = $datos['tituloSeleccionado'];
 $nombre = $datos['nombre'];
 $apellido = $datos['apellido'];
 $rut = $datos['rut'];
@@ -40,6 +40,7 @@ try {
 
     // Contenido del correo
     $mail->isHTML(true);
+    
 
     $htmlContent = file_get_contents('../PlantillaCorreo.html');
 
@@ -52,6 +53,8 @@ try {
     $htmlContent = str_replace('{precio}', $precio, $htmlContent);
     $htmlContent = str_replace('{url}', $url, $htmlContent);
     $htmlContent = str_replace('{url2}', $url2, $htmlContent);
+    $htmlContent = str_replace('{tituloSeleccionado}', $tituloGuardado, $htmlContent);
+
     
     $mail->Subject = 'Nuevo mensaje de contacto';
     $mail->Body = $htmlContent; 

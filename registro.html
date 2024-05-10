@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/menu.css" />
-    <link rel="stylesheet" href="css/stylesheet.css" />
+    <link rel="stylesheet" href="css/menu1.css" />
+    <link rel="stylesheet" href="css/stylesheet1.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
     <script src="https://kit.fontawesome.com/6bc758b643.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"
@@ -32,7 +32,8 @@
                 <p>
                     <i class="fa-solid fa-map-pin"></i>
                     Origen:
-                    <span>Los Heroes - Santiago</span>
+                    <span id="tituloSeleccionado"></span>
+                    
                 </p>
                 <p><i class="fa-solid fa-location-dot"></i>Destino:<span> Aeropuesrto de Santiago(SCL)</span></p>
                 <p>N° de pasaje: <span id="boleto"></span></p>
@@ -45,7 +46,7 @@
                 <p>Telefono: <span id="telefono"></span></p>
                 <div class="total">
                     <p>
-                        MONTO TOTAL CLP$<span id="precioP"></span>
+                        MONTO TOTAL CLP$ <span id="precioP"></span>
                     </p>
                 </div>
             </div>
@@ -110,7 +111,7 @@
                 <a href="index.html">
                     <button type="button" class="btn btn-primary">inicio</button>
                 </a>
-
+                
             </div>
         </div>
     </form>
@@ -126,7 +127,8 @@
             const correo = localStorage.getItem("correo");
             const telefono = localStorage.getItem("telefono");
             const precio = localStorage.getItem("precio");
-
+            var tituloGuardado = localStorage.getItem("tituloSeleccionado");
+            
 
             const concatenar = nombre + " " + apellido;
             var fechaActual = new Date();
@@ -142,7 +144,8 @@
                 "correo": correo,
                 "fechaCompra": fechaSolo,
                 "telefono": telefono,
-                "precio": precio
+                "precio": precio,
+                "tituloSeleccionado":tituloGuardado
 
             }
 
@@ -158,6 +161,9 @@
             $("#fechaActual").text(fechaSolo);
             $("#telefono").text(telefono);
             $("#precioP").text(precio);
+            $("tituloSeleccionado").text(tituloSeleccionado);
+            
+
 
 
 
@@ -222,8 +228,9 @@
                     $.ajax({
                         type: 'POST',
                         url: './php/guardar_imagen.php',
-                        data: { imagenData: imgData ,
-                            nameImg:key
+                        data: {
+                            imagenData: imgData,
+                            nameImg: key
                         },
                         success: function (response) {
                             alert('Imagen guardada exitosamente.');
@@ -235,10 +242,31 @@
                 });
             };
 
+            if (tituloGuardado) {
+                // Mostrar el título en la página
+                $("#tituloSeleccionado").text(tituloGuardado);
+
+                // Enviar el título a PHP mediante AJAX
+                $.ajax({
+                    type: "POST",
+                    url: "./php/enviar_correo.php'", // Reemplaza "tuscript.php" con la ruta a tu script PHP
+                    data: { titulo: tituloGuardado }, // Envía el título como datos a tu script PHP
+                    success: function (response) {
+                        console.log("Título enviado correctamente a PHP");
+                    },
+                    error: function (xhr, status, error) {
+                        console.error("Error al enviar el título a PHP:", error);
+                    }
+                });
+            } else {
+                // Mostrar un mensaje si no hay título guardado
+                $("#tituloSeleccionado").text("No hay título seleccionado");
+            }
 
         });
-
+        
     </script>
+    
 
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 </body>
