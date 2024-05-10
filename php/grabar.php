@@ -1,4 +1,11 @@
 <?php
+
+header("Access-Control-Allow-Origin: *");
+// Permitir los métodos GET, POST, PUT, DELETE, OPTIONS
+header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
+// Permitir los encabezados de solicitud que incluyan Content-Type, Authorization, X-Requested-With
+header("Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-With");
+
 // Configuración de la base de datos
 $servername = "localhost";
 $username = "root";
