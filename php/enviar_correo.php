@@ -19,8 +19,8 @@ $numTicket = $datos['key'];
 $fechaComra=$datos['fechaCompra'];
 $correo = $datos['correo'];
 $precio = $datos['precio'];
-$url = "https://desarrollo.wit.la//centro-puerto/asset/boletos/" . $numTicket . ".png";
-$url2 = "https://desarrollo.wit.la/centro-puerto/asset/boletos/" .$numTicket. ".png";
+$url = "https://desarrollo.wit.la//centro-puerto/php/boletos/" . $numTicket . ".png";
+$url2 = "https://desarrollo.wit.la/centro-puerto/php/boletos/" .$numTicket. ".png";
 // Configuración de PHPMailer
 $mail = new PHPMailer(true);
 
@@ -36,7 +36,9 @@ try {
 
     // Destinatario
     $mail->setFrom('desarrollo.wit@gmail.com', 'Desarrollo Wit');
-    $mail->addAddress('tobaralexis.89@gmail.com', 'Alexis Tobar S');
+    $mail->addAddress($correo, $nombre);
+    $mail->addAddress('dorian.celu@gmail.com', 'Dorian G');
+    $mail->addAddress('tobaralexis.89@gmail.com', 'Alexis');
 
     // Contenido del correo
     $mail->isHTML(true);
