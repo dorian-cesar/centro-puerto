@@ -7,10 +7,10 @@ header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-With");
 
 // Configuración de la base de datos
-$servername = "localhost";
-$username = "root";
-$password = "";
-$database = "tickets";
+$servername = "ls-3c0c538286def4da7f8273aa5531e0b6eee0990c.cylsiewx0zgx.us-east-1.rds.amazonaws.com";
+$username = "dbmasteruser";
+$password = "eF5D;6VzP$^7qDryBzDd,`+w(5e4*qI+";
+$database = "masgps";
 
 // Crear conexión
 $conn = new mysqli($servername, $username, $password, $database);
@@ -36,7 +36,7 @@ $correo = $data['correo'];
 $precio = $data['precio'];
 
 // Insertar los datos en la base de datos
-$sql = "INSERT INTO tickets (nombre, apellido, fecha, numTicket, telefono, correo, precio,rutas) 
+$sql = "INSERT INTO tickets2 (nombre, apellido, fecha, numTicket, telefono, correo, precio,rutas) 
 VALUES ('$nombre', '$apellido', '$fecha_convertida', '$key', '$telefono', '$correo', '$precio','$tituloGuardado')";
 
 if ($conn->query($sql) === TRUE) {
