@@ -19,8 +19,8 @@ $numTicket = $datos['key'];
 $fechaComra=$datos['fechaCompra'];
 $correo = $datos['correo'];
 $precio = $datos['precio'];
-$url = "http://localhost/centro-puerto/asset/boletos/" . $numTicket . ".png";
-$url2 = "https://masgps-bi.wit.la/centro-puerto/asset/boletos/1CJaKutAcy.png";
+$url = "https://desarrollo.wit.la//centro-puerto/asset/boletos/" . $numTicket . ".png";
+$url2 = "https://desarrollo.wit.la/centro-puerto/asset/boletos/" .$numTicket. ".png";
 // Configuración de PHPMailer
 $mail = new PHPMailer(true);
 
