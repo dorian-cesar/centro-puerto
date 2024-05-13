@@ -1,5 +1,12 @@
 <?php
 
+// Permitir el acceso desde cualquier origen
+header("Access-Control-Allow-Origin: *");
+
+// Permitir los métodos GET desde cualquier origen
+header("Access-Control-Allow-Methods: GET");
+
+
 // Configuración de la base de datos
 $servername = "ls-3c0c538286def4da7f8273aa5531e0b6eee0990c.cylsiewx0zgx.us-east-1.rds.amazonaws.com"; // Cambiar si es necesario
 $username = "dbmasteruser"; // Cambiar al nombre de usuario de la base de datos
