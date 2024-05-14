@@ -86,23 +86,32 @@
     // Función para redirigir según la selección del radio button y el clic en el botón Comprar
     function redireccionar(id, vistaIda, vistaIdaVuelta) {
         const radioIda = document.getElementById(id);
+        const radioIdaVuelta = document.getElementById('idaVuelta' + id.slice(-1));
         const botonComprar = document.getElementById('comprarBoton' + id.slice(-1));
 
         // Función para actualizar el href del botón Comprar
         function actualizarHref() {
             if (radioIda.checked) {
                 botonComprar.href = vistaIda;
-            } else {
+            } else if (radioIdaVuelta.checked) {
                 botonComprar.href = vistaIdaVuelta;
             }
         }
 
-        // Listener para el cambio en los radio buttons
+        // Listener para el cambio en los radio buttons de ida
         radioIda.addEventListener('change', actualizarHref);
 
+        // Listener para el cambio en los radio buttons de ida y vuelta
+        radioIdaVuelta.addEventListener('change', actualizarHref);
+
         // Listener para el clic en el botón Comprar
-        botonComprar.addEventListener('click', function() {
-            actualizarHref(); // Actualiza el href antes de redirigir
+        botonComprar.addEventListener('click', function(event) {
+            if (!radioIda.checked && !radioIdaVuelta.checked) {
+                event.preventDefault(); // Detiene la acción predeterminada del clic si no se selecciona ningún radio button
+                radioIda.reportValidity(); // Activa la validación del radio button
+            } else {
+                actualizarHref(); // Actualiza el href antes de redirigir
+            }
         });
 
         // Llama a actualizarHref para inicializar el href del botón
@@ -133,6 +142,4 @@
         });
     });
     </script>
-
-
             
